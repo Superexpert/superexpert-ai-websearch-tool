@@ -1,0 +1,44 @@
+{
+  "name": "@superexpert-ai/websearch-tool",
+  "version": "0.1.0-alpha.0",
+  "description": "Enable web search from chat",
+  "keywords": [
+    "superexpert-ai",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Superexpert/superexpert-ai-websearch-tool"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha"
+  },
+  "author": "Stephen Walther",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.MD"
+  ],
+  "scripts": {
+    "build": "tsc && npm pack",
+    "bump:alpha": "npm version prerelease --preid=alpha && npm publish --tag alpha",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@superexpert-ai/framework": "^0.1.0-alpha.15"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2"
+  }
+}
