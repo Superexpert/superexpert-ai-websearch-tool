@@ -9,12 +9,9 @@ registerServerTool({
   description: 'A tool for SuperExpert AI',
   async function() {
 
-    console.log(process.env.TAVILY_API_KEY);
-
-    const response = await tavilyClient.search("Who is Bertrand Russell?", { language: "en" });
-    console.log(response);
-
-
-    return `hello from NPM package websearch-tool agent ${this.agent.name}`;
+    const results = await tavilyClient.search("Who is Bertrand Russell?", { language: "en" });
+    const textResult = results.results.map(result => `\nTitle: ${result.title}\nContent: ${result.content}\n`).join('\n');
+    console.log(textResult);
+    return textResult;
   }
 });
