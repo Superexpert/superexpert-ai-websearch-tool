@@ -8,6 +8,9 @@ registerServerTool({
   name: 'websearch',
   description: 'A tool for SuperExpert AI',
   async function() {
+
+    console.log(process.env.TAVILY_API_KEY);
+
     const response = await tavilyClient.search("Who is Bertrand Russell?", { language: "en" });
     console.log(response);
 
