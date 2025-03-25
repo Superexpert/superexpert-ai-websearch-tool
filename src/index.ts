@@ -1,7 +1,7 @@
 import { registerServerTool} from '@superexpert-ai/framework';
 import { tavily } from '@tavily/core';
 
-const tavilyClient = tavily({ apiKey: "tvly-YOUR_API_KEY" });
+const tavilyClient = tavily({ apiKey: process.env.TAVILY_API_KEY });
 
 
 registerServerTool({
