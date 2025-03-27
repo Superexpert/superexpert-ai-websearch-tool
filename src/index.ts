@@ -1,7 +1,13 @@
 import { registerServerDataTool, registerServerTool } from "@superexpert-ai/framework";
 import { tavily } from "@tavily/core";
 
-const tavilyClient = tavily({ apiKey: process.env.TAVILY_API_KEY });
+const apiKey = process.env.TAVILY_API_KEY
+if (!apiKey) {
+  throw new Error(
+      'Tavily API key not found. Please set the Tavily_API_KEY environment variable.'
+  );
+}
+const tavilyClient = tavily({ apiKey: apiKey });
 
 registerServerTool({
   name: "webSearch",
