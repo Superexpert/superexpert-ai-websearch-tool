@@ -1,4 +1,4 @@
-import { registerServerDataTool, registerServerTool } from "@superexpert-ai/framework";
+import { registerContextTool, registerServerTool } from "@superexpert-ai/framework";
 import { tavily } from "@tavily/core";
 
 const apiKey = process.env.TAVILY_API_KEY
@@ -26,7 +26,7 @@ registerServerTool({
 });
 
 
-registerServerDataTool({
+registerContextTool({
   name: "webSearchData",
   description: "Perform a web search for each user message.",
   async function() {
