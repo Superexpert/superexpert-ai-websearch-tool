@@ -1,6 +1,6 @@
 {
   "name": "@superexpert-ai/websearch-tool",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Enable web search from chat",
   "keywords": [
     "superexpert-ai",
@@ -15,18 +15,15 @@
     "access": "public"
   },
   "author": "Stephen Walther",
-
-"main":   "./dist/websearch-tool.cjs",
+  "main": "./dist/websearch-tool.cjs",
   "module": "./dist/websearch-tool.js",
   "exports": {
     ".": {
-      "types":   "./dist/websearch-tool.d.ts",
-      "import":  "./dist/websearch-tool.js",
+      "types": "./dist/websearch-tool.d.ts",
+      "import": "./dist/websearch-tool.js",
       "require": "./dist/websearch-tool.cjs"
     }
   },
-
-
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
