@@ -15,14 +15,19 @@
     "access": "public"
   },
   "author": "Stephen Walther",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+
+"main":   "./dist/websearch-tool.cjs",
+  "module": "./dist/websearch-tool.js",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types":   "./dist/websearch-tool.d.ts",
+      "import":  "./dist/websearch-tool.js",
+      "require": "./dist/websearch-tool.cjs"
     }
   },
+
+
+  "types": "./dist/index.d.ts",
   "files": [
     "dist",
     "README.MD"

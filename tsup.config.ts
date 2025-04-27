@@ -1,13 +1,23 @@
-// tsup.config.ts  (place at the workspace root)
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entry: ['src/index.ts'],
-  format: ['esm', 'cjs'],   // dual-output
-  dts: true,                // generate dist/index.d.ts
+  entry: { index: 'src/index.ts' },
+  format: ['esm', 'cjs'],
+  dts: true,
   outDir: 'dist',
-  /** ⬇️  All deps that should stay external go here */
-  external: ['@prisma/client', 'react'],
+
+  /**
+   * v8 API: return { js: '.ext' }  (or  { mjs: '.ext' } / { cjs: '.ext' })
+   */
+  outExtension({ format }) {
+    // For the CJS build rename *.js  →  *.cjs
+    if (format === 'cjs') return { js: '.cjs' };
+
+    // For the ESM build keep the default *.js
+    return { js: '.js' };
+  },
+
+  external: ['@superexpert-ai/framework', '@tavily/core', 'dotenv'],
   clean: true,
   target: 'es2019',
 });
