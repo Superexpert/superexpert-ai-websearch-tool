@@ -15,13 +15,13 @@
     "access": "public"
   },
   "author": "Stephen Walther",
-  "main": "./dist/websearch-tool.cjs",
-  "module": "./dist/websearch-tool.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "types": "./dist/websearch-tool.d.ts",
-      "import": "./dist/websearch-tool.js",
-      "require": "./dist/websearch-tool.cjs"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "types": "./dist/index.d.ts",
