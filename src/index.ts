@@ -27,7 +27,7 @@ registerServerTool({
 
 
 registerContextTool({
-  name: "webSearchData",
+  name: "webSearchContext",
   description: "Perform a web search for each user message.",
   async function() {
     // Don't perform search if there is only one message
