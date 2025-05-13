@@ -21,6 +21,9 @@ registerServerTool({
   ],
   async function(query:string) {
     const results = await getWebSearchResults(query);
+    await this.log.info(
+      `webSearch results for "${query}": ${results}`
+    );
     return results;
   },
 });
@@ -40,7 +43,7 @@ registerContextTool({
     // Perform a web search using the last user message as the query
     const results = await getWebSearchResults(lastUserMessage.content);
     await this.log.info(
-      `Web search results for "${lastUserMessage.content}": ${results}`
+      `webSearchContext results for "${lastUserMessage.content}": ${results}`
     );
     return results;
   }
