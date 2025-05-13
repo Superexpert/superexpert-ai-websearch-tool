@@ -39,7 +39,7 @@ registerContextTool({
 
     // Perform a web search using the last user message as the query
     const results = await getWebSearchResults(lastUserMessage.content);
-    this.log.info(
+    await this.log.info(
       `Web search results for "${lastUserMessage.content}": ${results}`
     );
     return results;
